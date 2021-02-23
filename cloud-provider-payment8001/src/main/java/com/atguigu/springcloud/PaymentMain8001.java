@@ -1,11 +1,9 @@
 package com.atguigu.springcloud;
 
-import jdk.internal.org.objectweb.asm.tree.MultiANewArrayInsnNode;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.context.annotation.ComponentScan;
-
 /**
  * @ClassName PaymentMain8001
  * @Description TODO
@@ -15,10 +13,12 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @SpringBootApplication
 @EnableEurekaClient
+@EnableDiscoveryClient
 public class PaymentMain8001 {
 
     //主启动
     public static void main(String[] args) {
         SpringApplication.run(PaymentMain8001.class, args);
     }
+
 }
