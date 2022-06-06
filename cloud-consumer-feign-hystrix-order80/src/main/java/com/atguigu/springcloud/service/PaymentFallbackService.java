@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 public class PaymentFallbackService implements PaymentHystrixService {
     @Override
     public String paymentInfo_OK(Integer id) {
-        return "----PaymentFallbackService fall back paymentInfo_OK,  哈哈";
+        return "----PaymentFallbackService fall back paymentInfo_OK,  哭哭";
     }
 
     @Override

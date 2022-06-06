@@ -35,11 +35,14 @@ public class PaymentService {
      * 当前服务不可用力，做服务降级，兜底方案都是paymentInfo_TimeOutHandler
      *
      */
-    @HystrixCommand(fallbackMethod = "paymentInfo_TimeOutHandler",commandProperties = {@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds",value = "5000")})
+    @HystrixCommand(fallbackMethod = "paymentInfo_TimeOutHandler",commandProperties = {
+            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds",value = "5000")
+    })
     public String paymentInfo_TimeOut(Integer id){
-        //int age = 10/0;
+        // int age = 10/0;
         try {
-            TimeUnit.SECONDS.sleep(3000);
+            //暂停毫秒数
+            TimeUnit.MILLISECONDS.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
